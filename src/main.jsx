@@ -9,34 +9,41 @@ import Dashboard from './dashboard/index.jsx'
 import { ClerkProvider } from '@clerk/clerk-react'
 import EditResume from './dashboard/resume/[resumeId]/edit/index.jsx'
 import ViewResume from './my-resume/[resumeId]/view/index.jsx'
+import VIP404Page from './components/custom/VIP404Page.jsx'
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
-const router=createBrowserRouter([
+const router = createBrowserRouter([
   {
-    path:'/',
-    element:<Home/>
-  },
-  {
-    element:<App/>,
-    children:[
+    path: "/",
+    element: <App />,
+    errorElement: <VIP404Page />, 
+    children: [
       {
-        path:'/dashboard',
-        element:<Dashboard/>
-      },
-      {
-        path:'/dashboard/resume/:resumeId/edit',
-        element:<EditResume/>
+        index: true, 
+        element: <Home />
       },
     ]
   },
- ,
   {
-    path:'/auth/sign-in',
-    element:<SignInPage/>
+    element: <App />,
+    children: [
+      {
+        path: '/dashboard',
+        element: <Dashboard />
+      },
+      {
+        path: '/dashboard/resume/:resumeId/edit',
+        element: <EditResume />
+      },
+    ]
   },
   {
-    path:'/my-resume/:resumeId/view',
-    element:<ViewResume/>
+    path: '/auth/sign-in',
+    element: <SignInPage />
+  },
+  {
+    path: '/my-resume/:resumeId/view',
+    element: <ViewResume />
   }
 ])
 

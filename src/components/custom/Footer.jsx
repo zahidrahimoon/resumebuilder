@@ -1,5 +1,6 @@
 import React from "react";
 import { FaFacebook, FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -19,24 +20,14 @@ const Footer = () => {
             <h2 className="text-lg font-bold text-white">Quick Links</h2>
             <ul className="mt-2 space-y-2 text-sm">
               <li>
-                <a href="/about" className="hover:text-blue-400 transition duration-200">
-                  About Us
-                </a>
+                <Link to="/" className="hover:text-blue-400 transition duration-200">
+                  Home
+                </Link>
               </li>
               <li>
-                <a href="/features" className="hover:text-blue-400 transition duration-200">
-                  Features
-                </a>
-              </li>
-              <li>
-                <a href="/pricing" className="hover:text-blue-400 transition duration-200">
-                  Pricing
-                </a>
-              </li>
-              <li>
-                <a href="/contact" className="hover:text-blue-400 transition duration-200">
-                  Contact Us
-                </a>
+                <Link to="/dashboard" className="hover:text-blue-400 transition duration-200">
+                  Dashboard
+                </Link>
               </li>
             </ul>
           </div>
@@ -65,7 +56,7 @@ const Footer = () => {
         <div className="mt-8 border-t border-gray-700 pt-4 text-center">
           <p className="text-sm">© {new Date().getFullYear()} AI Resume Builder. All rights reserved.</p>
           <p className="text-xs mt-2">
-            Designed with ❤️ by <a href="/team" className="hover:text-blue-400 transition">Your Team</a>.
+            Designed with ❤️ by <Link to="/team" className="hover:text-blue-400 transition">Zahid Rahimoon</Link>.
           </p>
         </div>
       </div>

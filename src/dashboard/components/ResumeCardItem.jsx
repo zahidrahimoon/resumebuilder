@@ -28,11 +28,7 @@ function ResumeCardItem({resume,refreshData}) {
   const navigation=useNavigate();
   const [openAlert,setOpenAlert]=useState(false);
   const [loading,setLoading]=useState(false);
-  // const onMenuClick=(url)=>{
-  //   navigation(url)
-  // }
-
-
+  
   const onDelete=()=>{
     setLoading(true);
     GlobalApi.DeleteResumeById(resume.documentId).then(resp=>{
@@ -47,29 +43,21 @@ function ResumeCardItem({resume,refreshData}) {
   }
   return (
     
-       <div className=''>
+       <div className='text-white border border-black rounded-lg'>
           <Link to={'/dashboard/resume/'+resume.documentId+"/edit"}>
-        <div className='p-14  bg-gradient-to-b
-          from-pink-100 via-purple-200 to-blue-200
-        h-[280px] 
-          rounded-t-lg border-t-4
-        '
+        <div className='p-14 bg-gradient-to-r from-silver-400 via-silver-500 to-silver-600 h-[280px] rounded-t-lg border-t-4'
         style={{
-          borderColor:resume?.themeColor,
-          color: 'black' // Ensure text color is black
+          borderColor:resume?.themeColor, 
         }}
         >
-              <div className='flex 
-        items-center justify-center h-[180px] '>
-                {/* <Notebook/> */}
+              <div className='flex items-center justify-center h-[180px]'>
                 <img src="/cv.png" width={80} height={80} />
               </div>
         </div>
         </Link>
-        <div className='border p-3 flex justify-between  text-white rounded-b-lg shadow-lg'
+        <div className='border p-3 flex justify-between text-white rounded-b-lg shadow-lg'
          style={{
           background:resume?.themeColor,
-          color: 'black' // Ensure text color is black
         }}>
           <h2 className='text-sm'>{resume.title}</h2>
          

@@ -13,10 +13,10 @@ import { toast } from 'sonner'
 
 function ThemeColor() {
     const colors=[
-        "#FF5733", "#33FF57", "#3357FF", "#FF33A1", "#A133FF",
-        "#33FFA1", "#FF7133", "#71FF33", "#7133FF", "#FF3371",
-        "#33FF71", "#3371FF", "#A1FF33", "#33A1FF", "#FF5733",
-        "#5733FF", "#33FF5A", "#5A33FF", "#FF335A", "#335AFF"
+        "#1F2937", "#4B5563", "#6B7280", "#9CA3AF", "#D1D5DB",
+        "#F3F4F6", "#F9FAFB", "#3B82F6", "#10B981", "#FBBF24",
+        "#EF4444", "#A855F7", "#6366F1", "#F472B6", "#34D399",
+        "#60A5FA", "#FBBF24", "#F59E0B", "#F43F5E", "#A1A1A1"
     ]
 
     const {resumeInfo,setResumeInfo}=useContext(ResumeInfoContext);
